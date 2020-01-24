@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ReminderCellView: View {
+    
     @State var reminder: Reminder
     
     var body: some View {

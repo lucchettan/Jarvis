@@ -9,9 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State var isModal: Bool = false
-    
-    
     @State var reminders: [Reminder] = []
     
     var body: some View {
@@ -31,7 +30,15 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                         .foregroundColor(.orange)
+                       
                 }
+                Button(action: {Reader().stringReader(string: "Wesh Ma Gueule")}){
+                                 Image(systemName: "play.circle.fill")
+                                     .resizable()
+                                     .frame(width: 50, height: 50)
+                                     .foregroundColor(.orange)
+                                    
+                             }
                 
             }
         .navigationBarTitle("Remind me!")
