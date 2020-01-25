@@ -12,6 +12,9 @@ struct ContentView: View {
     
     @State var isModal: Bool = false
     @State var reminders: [Reminder] = []
+    enum UserDefaultsKeys: String {
+        case reminder
+    }
     
     var body: some View {
        
@@ -40,8 +43,10 @@ struct ContentView: View {
 //                }
                 
                     .onAppear{
-                        guard let myreminders = UserDefaults.standard.array(forKey: "reminders") else {return}
-                        self.reminders = myreminders as! [Reminder]
+                        let defaults = UserDefaults.standard
+                        guard let remindersData = defaults.object(forKey: "reminders") as? Data else { return }
+                        guard let DecodedReminders = try? PropertyListDecoder().decode([Reminder].self, from: remindersData) as! [Reminder] else { return }
+                        self.reminders = DecodedReminders
                 }
             }
         .navigationBarTitle("Remind me!")

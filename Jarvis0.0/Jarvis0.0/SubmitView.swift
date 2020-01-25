@@ -11,14 +11,16 @@ import SwiftUI
 struct SubmitView: View {
 //-----This will allow us to make the Sheet disappear from the screen
     @Binding var isModal: Bool
-    
 //---Array in the wich we are going to add our created Memo
     @Binding var reminders: [Reminder]
-
 //----Generate value that we will assign to validate the new Memo
     @State var timePicked = Date()
     @State var title = ""
     @State var isOn = true
+    
+    enum UserDefaultsKeys: String {
+        case reminder
+    }
     
 
     var body: some View {
@@ -39,12 +41,15 @@ struct SubmitView: View {
                         Section (header: Text("Validation")) {
                             Button (action: {
                                 guard self.title != "" else {return}
-                                let new = Reminder(name: self.title, time: self.timePicked, isOn: self.isOn)
-                                self.reminders.append(new)
+                                let newReminder = Reminder(name: self.title, time: self.timePicked, isOn: self.isOn)
+                                self.reminders.append(newReminder)
 //                        now we make de page disappear
                                 self.isModal = false
-                                ReminderHandler().create(reminder: new)
-                                UserDefaults.standard.set(self.reminders, forKey: "reminders")
+//                                ----------create the notification
+                                ReminderHandler().create(reminder: newReminder)
+                                let defaults = UserDefaults.standard
+                                defaults.set(try? PropertyListEncoder().encode(self.reminders), forKey: "reminders")
+
                             }) {
                                 Text("Valider")
                             }

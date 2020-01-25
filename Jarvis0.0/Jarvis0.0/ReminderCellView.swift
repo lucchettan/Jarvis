@@ -11,7 +11,6 @@ import SwiftUI
 struct ReminderCellView: View {
     
     @State var reminder: Reminder
-    
     var body: some View {
         HStack {
             VStack(alignment: .center){
@@ -31,11 +30,5 @@ struct ReminderCellView: View {
         formatter.timeStyle = .short
         formatter.dateFormat  = "HH:mm"
         return formatter.string(from: date)
-    }
-}
-
-struct ReminderCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReminderCellView(reminder: Reminder(name: "Oublie pas le pain!", time: Date(), isOn: true))
     }
 }
