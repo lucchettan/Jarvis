@@ -43,8 +43,8 @@ struct SubmitView: View {
                                 self.reminders.append(new)
 //                        now we make de page disappear
                                 self.isModal = false
-//                                self.simpleAddNotification(hour: new.time, minute: <#T##Int#>, identifier: <#T##String#>, title: <#T##String#>, body: <#T##String#>)
                                 ReminderHandler().create(reminder: new)
+                                UserDefaults.standard.set(self.reminders, forKey: "reminders")
                             }) {
                                 Text("Valider")
                             }

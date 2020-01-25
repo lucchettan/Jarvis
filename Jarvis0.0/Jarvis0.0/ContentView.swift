@@ -32,14 +32,17 @@ struct ContentView: View {
                         .foregroundColor(.orange)
                        
                 }
-                Button(action: {Reader().stringReader(string: "Wesh Ma Gueule")}){
-                                 Image(systemName: "play.circle.fill")
-                                     .resizable()
-                                     .frame(width: 50, height: 50)
-                                     .foregroundColor(.orange)
-                                    
-                             }
+//                Button(action: {Reader().stringReader(string: "Wesh Ma Gueule")}){
+//                                 Image(systemName: "play.circle.fill")
+//                                     .resizable()
+//                                     .frame(width: 50, height: 50)
+//                                     .foregroundColor(.orange)
+//                }
                 
+                    .onAppear{
+                        guard let myreminders = UserDefaults.standard.array(forKey: "reminders") else {return}
+                        self.reminders = myreminders as! [Reminder]
+                }
             }
         .navigationBarTitle("Remind me!")
         }
