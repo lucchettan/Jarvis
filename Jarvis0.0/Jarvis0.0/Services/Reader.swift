@@ -12,16 +12,16 @@ import AVFoundation
 
 class Reader {
     
-    func stringReader(string: String) {
+    func stringReader(string: String) -> NSCoder {
         
         let utterance = AVSpeechUtterance(string: string)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance.voice = AVSpeechSynthesisVoice(language: Locale.current.identifier)
 //        utterance.rate = 0.1
 
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
-        
+        return NSCoder()
+
     }
-    
     
 }

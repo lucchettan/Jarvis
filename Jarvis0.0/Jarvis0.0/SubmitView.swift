@@ -44,8 +44,9 @@ struct SubmitView: View {
 //                        now we make de page disappear
                                 self.isModal = false
 //                                self.simpleAddNotification(hour: new.time, minute: <#T##Int#>, identifier: <#T##String#>, title: <#T##String#>, body: <#T##String#>)
+                                ReminderHandler().create(reminder: new)
                             }) {
-                                Text("Valider l'exercice")
+                                Text("Valider")
                             }
                         }
                     }
