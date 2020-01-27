@@ -20,7 +20,7 @@ class ReminderHandler {
             content.badge = 1
 //            content.sound = UNNotificationSound(coder: Reader().stringReader(string: reminder.name))
             content.sound = .default
-    //--------------what izit
+//--------------what izit
             content.userInfo = ["value": "Data with local notification"]
             
             let gregorian = Calendar(identifier: .gregorian)
@@ -29,18 +29,12 @@ class ReminderHandler {
             let triggerTime = Calendar.current.dateComponents([.hour,.minute,.second,], from: reminder.time)
             let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
 
-            
             let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
-            
             
             center.add(request) { (error) in
                 if error != nil {
                     print("Error = \(error?.localizedDescription ?? "error local notification")")
                 }
-                
-                print(date)
-                print(request)
-                print("added to center")
             }
         }
 }

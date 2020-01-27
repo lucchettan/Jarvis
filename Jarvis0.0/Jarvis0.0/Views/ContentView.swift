@@ -25,7 +25,7 @@ struct ContentView: View {
                         ReminderCellView(reminder: reminder).frame(height: 50)
                             .padding()
                     }
-                    //erase with the native deleting gesture
+//----------------erase with the native deleting gesture
                     .onDelete(perform: self.deleteRow)
                 }.padding()
                 Button(action: {self.isModal = true}){
@@ -35,26 +35,20 @@ struct ContentView: View {
                         .foregroundColor(.orange)
                        
                 }
-//                Button(action: {Reader().stringReader(string: "Wesh Ma Gueule")}){
-//                                 Image(systemName: "play.circle.fill")
-//                                     .resizable()
-//                                     .frame(width: 50, height: 50)
-//                                     .foregroundColor(.orange)
-//                }
-                
                     .onAppear{
                         let defaults = UserDefaults.standard
                         guard let remindersData = defaults.object(forKey: "reminders") as? Data else { return }
                         guard let DecodedReminders = try? PropertyListDecoder().decode([Reminder].self, from: remindersData) as! [Reminder] else { return }
                         self.reminders = DecodedReminders
-                }
+                    }
             }
-        .navigationBarTitle("Remind me!")
+            .navigationBarTitle("Remind me!")
         }
-        .sheet(isPresented: $isModal, content: {SubmitView(isModal: self.$isModal, reminders: self.$reminders)})
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .sheet(isPresented: $isModal, content: {SubmitView(isModal: self.$isModal, reminders: self.$reminders)})
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
     
+//------Delete Reminder, we have to add deleting the sourcefile of Reminder.soundUrl
     private func deleteRow(at indexSet: IndexSet) {
         self.reminders.remove(atOffsets: indexSet)
     }

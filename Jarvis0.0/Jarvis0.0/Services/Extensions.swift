@@ -7,15 +7,11 @@
 //
 
 import Foundation
-
-
+//Help us to get a string from a date
 extension Date {
-    
     func toString( dateFormat format  : String ) -> String {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
     }
-
 }

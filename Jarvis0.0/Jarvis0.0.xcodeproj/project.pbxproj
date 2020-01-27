@@ -82,20 +82,12 @@
 		12275EFA23AA8E10005867EC /* Jarvis0.0 */ = {
 			isa = PBXGroup;
 			children = (
+				37C9119723DF4D9E00295327 /* Views */,
 				37256C9B23DC8C8C0069F9B0 /* Model */,
 				37EA4C9823DB28880056F01E /* Services */,
 				12275EFB23AA8E10005867EC /* AppDelegate.swift */,
 				12275EFD23AA8E10005867EC /* SceneDelegate.swift */,
-				12275EFF23AA8E10005867EC /* ContentView.swift */,
-				12275F1323AA9250005867EC /* ReminderCellView.swift */,
-				12275F1723AB7933005867EC /* SubmitView.swift */,
-				12275F1523AA97F3005867EC /* CustomToggle.swift */,
-				11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */,
-				11D420D123DDB37D004D4BA4 /* AudioRecorder.swift */,
 				11D420D323DDC85A004D4BA4 /* RecordingList.swift */,
-				11D420D523DDD0A9004D4BA4 /* Extensions.swift */,
-				11C27F7923DEE4A800B20424 /* Helper.swift */,
-				11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */,
 				12275F0123AA8E12005867EC /* Assets.xcassets */,
 				12275F0623AA8E12005867EC /* LaunchScreen.storyboard */,
 				12275F0923AA8E12005867EC /* Info.plist */,
@@ -121,11 +113,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		37C9119723DF4D9E00295327 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12275EFF23AA8E10005867EC /* ContentView.swift */,
+				12275F1323AA9250005867EC /* ReminderCellView.swift */,
+				12275F1523AA97F3005867EC /* CustomToggle.swift */,
+				12275F1723AB7933005867EC /* SubmitView.swift */,
+				11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		37EA4C9823DB28880056F01E /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				11C1830723DB0DD300456E16 /* Reader.swift */,
 				37256C9923DC80E50069F9B0 /* ReminderHandler.swift */,
+				11D420D123DDB37D004D4BA4 /* AudioRecorder.swift */,
+				11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */,
+				11D420D523DDD0A9004D4BA4 /* Extensions.swift */,
+				11C27F7923DEE4A800B20424 /* Helper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

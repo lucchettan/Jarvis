@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-
+//Extract a date from a URL    maybe include the extension file inside this one
 func getCreationDate(for file: URL) -> Date {
     if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
         let creationDate = attributes[FileAttributeKey.creationDate] as? Date {

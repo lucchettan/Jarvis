@@ -9,19 +9,13 @@
 import Foundation
 import AVFoundation
 
-
+//This read a styring vocally, we may not use it anymore but this piece of code could be usefull further
 class Reader {
-    
     func stringReader(string: String) -> NSCoder {
-        
         let utterance = AVSpeechUtterance(string: string)
         utterance.voice = AVSpeechSynthesisVoice(language: Locale.current.identifier)
-//        utterance.rate = 0.1
-
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
         return NSCoder()
-
     }
-    
 }
