@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11C1830823DB0DD300456E16 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1830723DB0DD300456E16 /* Reader.swift */; };
-		11C27F7823DEE35800B20424 /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7723DEE35800B20424 /* RecordingDataModel.swift */; };
+		11C27F7823DEE35800B20424 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7723DEE35800B20424 /* Recording.swift */; };
 		11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7923DEE4A800B20424 /* Helper.swift */; };
 		11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */; };
 		11D420D023DDAAD7004D4BA4 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */; };
@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		11C1830723DB0DD300456E16 /* Reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
-		11C27F7723DEE35800B20424 /* RecordingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
+		11C27F7723DEE35800B20424 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		11C27F7923DEE4A800B20424 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 				37EA4C9823DB28880056F01E /* Services */,
 				12275EFB23AA8E10005867EC /* AppDelegate.swift */,
 				12275EFD23AA8E10005867EC /* SceneDelegate.swift */,
-				11D420D323DDC85A004D4BA4 /* RecordingList.swift */,
 				12275F0123AA8E12005867EC /* Assets.xcassets */,
 				12275F0623AA8E12005867EC /* LaunchScreen.storyboard */,
 				12275F0923AA8E12005867EC /* Info.plist */,
@@ -108,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				12275F0F23AA8E7C005867EC /* Reminder.swift */,
-				11C27F7723DEE35800B20424 /* RecordingDataModel.swift */,
+				11C27F7723DEE35800B20424 /* Recording.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +133,7 @@
 				11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */,
 				11D420D523DDD0A9004D4BA4 /* Extensions.swift */,
 				11C27F7923DEE4A800B20424 /* Helper.swift */,
+				11D420D323DDC85A004D4BA4 /* RecordingList.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 				12275F0023AA8E10005867EC /* ContentView.swift in Sources */,
 				11D420D423DDC85A004D4BA4 /* RecordingList.swift in Sources */,
 				11D420D623DDD0A9004D4BA4 /* Extensions.swift in Sources */,
-				11C27F7823DEE35800B20424 /* RecordingDataModel.swift in Sources */,
+				11C27F7823DEE35800B20424 /* Recording.swift in Sources */,
 				11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */,
 				12275F1423AA9250005867EC /* ReminderCellView.swift in Sources */,
 				12275F1823AB7933005867EC /* SubmitView.swift in Sources */,
@@ -362,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Jarvis0.0/Preview Content\"";
-				DEVELOPMENT_TEAM = 52DP6J7QNT;
+				DEVELOPMENT_TEAM = QN5JJ5XQZ6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Jarvis0.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -382,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Jarvis0.0/Preview Content\"";
-				DEVELOPMENT_TEAM = 52DP6J7QNT;
+				DEVELOPMENT_TEAM = QN5JJ5XQZ6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Jarvis0.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

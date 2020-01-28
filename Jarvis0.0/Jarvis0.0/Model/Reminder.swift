@@ -14,4 +14,8 @@ struct Reminder: Codable, Hashable{
 //    var notification: UNNotificationRequest
     var time: Date
     var isOn: Bool
+    
+//----- Trial
+    var fileURL: URL?
+//    var createdAt: Date
 }

@@ -9,83 +9,41 @@
 import SwiftUI
 
 struct SubmitView: View {
-//-----This will allow us to make the Sheet disappear from the screen
+//--This will allow us to make the Sheet disappear and go back to contentView
     @Binding var isModal: Bool
-//---Array in the wich we are going to add our created Memo
+//--Array in the wich we are going to add our created Memo
     @Binding var reminders: [Reminder]
-//----Generate value that we will assign to validate the new Memo
+//--Generate value that we will assign to validate the new reminder
     @State var timePicked = Date()
     @State var title = ""
-    @State var isOn = true
-    
-    enum UserDefaultsKeys: String {
-        case reminder
-    }
+//--Creating an empty reminder
+    @State var newReminder = Reminder(name: "trial", time: Date(), isOn: true)
     
 
     var body: some View {
         VStack {
-                    Form {
-                        Section (header: Text("Nouveau Memo")) {
-                            TextField("Nom de l'exercice", text: $title)
-                                .lineLimit(4)
-                                .multilineTextAlignment(.leading)
-                                .frame(height: 100)
-                            Toggle(isOn: $isOn){
-                                Text(self.isOn ? "Activé" : "Désactivé")
-                            }
-                            DatePicker(selection: $timePicked, displayedComponents: .hourAndMinute) {
-                                Text("Heure du rappel")
-                            }
-                        }
-                        Section (header: Text("Validation")) {
-                            Button (action: {
-                                guard self.title != "" else {return}
-                                let newReminder = Reminder(name: self.title, time: self.timePicked, isOn: self.isOn)
-                                self.reminders.append(newReminder)
-//                        now we make de page disappear
-                                self.isModal = false
-//                                ----------create the notification
-                                ReminderHandler().create(reminder: newReminder)
-                                let defaults = UserDefaults.standard
-                                defaults.set(try? PropertyListEncoder().encode(self.reminders), forKey: "reminders")
-
-                            }) {
-                                Text("Valider")
-                            }
-                        }
-                    }
-                    Spacer()
+            VStack {
+                DatePicker(selection: $timePicked, displayedComponents: .hourAndMinute) {
+                    Text("Heure du rappel")
                 }
+                CustomToggle(isOn: self.$newReminder.isOn)
+                AnimatedButton(reminder: $newReminder)
+            }
+            Button (action: {
+//                    guard self.title != "" else {return}
+//------------------Create a new Reminder
+                self.newReminder.name = self.title
+                self.newReminder.time = self.timePicked
+                self.reminders.append(self.newReminder)
+//------------------now we make de page disappear
+                self.isModal = false
+//------------------creating the notification
+                ReminderHandler().create(reminder: self.newReminder)
+                let defaults = UserDefaults.standard
+                defaults.set(try? PropertyListEncoder().encode(self.reminders), forKey: "reminders")
+            }){
+                Text("Save")
+            }
+        }
     }
-    
-//    public func simpleAddNotification(hour: Int, minute: Int, identifier: String, title: String, body: String) {
-//        // Initialize User Notification Center Object
-//        let center = UNUserNotificationCenter.current()
-//
-//        // The content of the Notification
-//        let content = UNMutableNotificationContent()
-//        content.title = title
-//        content.body = body
-//        content.sound = .default
-//
-//        // The selected time to notify the user
-//        var dateComponents = DateComponents()
-//        dateComponents.calendar = Calendar.current
-//        dateComponents.hour = hour
-//        dateComponents.minute = minute
-//
-//        // The time/repeat trigger
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-//
-//        // Initializing the Notification Request object to add to the Notification Center
-//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-//
-//        // Adding the notification to the center
-//        center.add(request) { (error) in
-//            if (error) != nil {
-//                print(error!.localizedDescription)
-//            }
-//        }
-//    }
 }

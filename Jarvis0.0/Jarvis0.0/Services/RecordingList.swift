@@ -28,11 +28,11 @@ struct RecordingList: View {
       }
     }
 
-struct RecordingList_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordingList(audioRecorder: AudioRecorder())
-    }
-}
+//struct RecordingList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecordingList(audioRecorder: AudioRecorder())
+//    }
+//}
 
 struct RecordingRow: View {
     var audioURL: URL
@@ -60,4 +60,3 @@ struct RecordingRow: View {
     }
 }
     
-

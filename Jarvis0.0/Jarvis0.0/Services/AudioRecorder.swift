@@ -34,7 +34,8 @@ class AudioRecorder: NSObject, ObservableObject{
         fetchRecordings()
     }
     
-    func startRecording() {
+    func startRecording() -> URL? {
+        print("----------starts recording--------")
         let recordingSession = AVAudioSession.sharedInstance()
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
@@ -42,6 +43,18 @@ class AudioRecorder: NSObject, ObservableObject{
         } catch { print("Failed to set up recording session") }
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")).m4a")
+        
+        
+//        let filename = audioFilename.lastPathComponent
+//        let targetUrl = try FileManager.default.soundsLibraryURL(for: filename)
+//        
+        
+        let path = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
+        let url = path[0].appendingPathComponent("Sounds", isDirectory: true)
+        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: false, attributes: nil)
+        try? FileManager.default.copyItem(atPath: audioFilename.path, toPath: "\(url.path)"+"\(audioFilename)")
+
+
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -52,7 +65,10 @@ class AudioRecorder: NSObject, ObservableObject{
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.record()
             recording = true
+            print("----------finish creating--------")
+            return audioFilename.absoluteURL
         } catch { print("Could not start recording") }
+        return nil
     }
     
     
@@ -60,6 +76,7 @@ class AudioRecorder: NSObject, ObservableObject{
         audioRecorder.stop()
         recording = false
         fetchRecordings()
+        print("---------finish recording---------")
     }
 
     func fetchRecordings() {
@@ -81,7 +98,21 @@ class AudioRecorder: NSObject, ObservableObject{
             print(url)
             do { try FileManager.default.removeItem(at: url) } catch { print("File could not be deleted!") }
         }
+        print("url deleted")
         fetchRecordings()
+    }
+}
+
+
+extension FileManager {
+
+    func soundsLibraryURL(for filename: String) throws -> URL {
+        let libraryURL = try url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let soundFolderURL = libraryURL.appendingPathComponent("Sounds", isDirectory: true)
+        if !fileExists(atPath: soundFolderURL.path) {
+            try createDirectory(at: soundFolderURL, withIntermediateDirectories: true)
+        }
+        return soundFolderURL.appendingPathComponent(filename, isDirectory: false)
     }
 }
     

@@ -4,26 +4,30 @@
 //
 //  Created by Nicolas Lucchetta on 18/12/2019.
 //  Copyright © 2019 Nicolas Lucchetta. All rights reserved.
-//
+
 
 import SwiftUI
 
 struct ReminderCellView: View {
-    
+    @ObservedObject var audioPlayer = AudioPlayer()
     @State var reminder: Reminder
+    
     var body: some View {
         HStack {
             VStack(alignment: .center){
                 Text(getHourFromDate(date: self.reminder.time))
                     .font(.system(size: 40))
                 Text(self.reminder.name)
-
             }
-            Spacer()
+            Button(action: {
+                self.audioPlayer.startPlayback(audio: self.reminder.fileURL!)
+            }) {
+                Text("Play")
+            }
             CustomToggle(isOn: self.$reminder.isOn)
         }
     }
-    
+
     func getHourFromDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .none

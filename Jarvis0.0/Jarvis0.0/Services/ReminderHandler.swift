@@ -12,16 +12,15 @@ import UserNotifications
  
 class ReminderHandler {
     let center = UNUserNotificationCenter.current()
-    
+
         func create(reminder: Reminder) {
             let content = UNMutableNotificationContent()
             content.title = "Don't forget to:"
             content.body = reminder.name
             content.badge = 1
-//            content.sound = UNNotificationSound(coder: Reader().stringReader(string: reminder.name))
-            content.sound = .default
+            content.sound =  UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "\(reminder.fileURL.).m4a"))
 //--------------what izit
-            content.userInfo = ["value": "Data with local notification"]
+//            content.userInfo = ["value": "Data with local notification"]
             
             let gregorian = Calendar(identifier: .gregorian)
             var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: reminder.time)

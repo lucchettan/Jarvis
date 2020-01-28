@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @ObservedObject var audioRecorder = AudioRecorder()
     @State var isModal: Bool = false
     @State var reminders: [Reminder] = []
     enum UserDefaultsKeys: String {
@@ -50,6 +50,9 @@ struct ContentView: View {
     
 //------Delete Reminder, we have to add deleting the sourcefile of Reminder.soundUrl
     private func deleteRow(at indexSet: IndexSet) {
+        for index in indexSet {
+            self.audioRecorder.deleteRecording(urlsToDelete: [self.reminders[index].fileURL!])
+        }
         self.reminders.remove(atOffsets: indexSet)
     }
 }
