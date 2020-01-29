@@ -45,14 +45,13 @@ class AudioRecorder: NSObject, ObservableObject{
         let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")).m4a")
         
         
-//        let filename = audioFilename.lastPathComponent
-//        let targetUrl = try FileManager.default.soundsLibraryURL(for: filename)
-//        
+        let filename = audioFilename.lastPathComponent
+        let targetUrl = try? FileManager.default.soundsLibraryURL(for: filename)
         
-        let path = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
-        let url = path[0].appendingPathComponent("Sounds", isDirectory: true)
-        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: false, attributes: nil)
-        try? FileManager.default.copyItem(atPath: audioFilename.path, toPath: "\(url.path)"+"\(audioFilename)")
+//        let path = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
+//        let url = path[0].appendingPathComponent("Sounds", isDirectory: true)
+//        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: false, attributes: nil)
+//        try? FileManager.default.copyItem(atPath: audioFilename.path, toPath: "\(url.path)"+"\(audioFilename)")
 
 
         let settings = [
@@ -62,11 +61,11 @@ class AudioRecorder: NSObject, ObservableObject{
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: targetUrl!, settings: settings)
             audioRecorder.record()
             recording = true
             print("----------finish creating--------")
-            return audioFilename.absoluteURL
+            return targetUrl
         } catch { print("Could not start recording") }
         return nil
     }

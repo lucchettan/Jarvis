@@ -18,7 +18,14 @@ class ReminderHandler {
             content.title = "Don't forget to:"
             content.body = reminder.name
             content.badge = 1
-            content.sound =  UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "\(reminder.fileURL.).m4a"))
+            print("\n ------this is the last path: -------")
+            print(reminder.fileURL!.lastPathComponent)
+            print("------this is the url: -------")
+            print(reminder.fileURL!)
+            print("------last path components---")
+            print(reminder.fileURL!.pathComponents)
+            
+            content.sound =  UNNotificationSound(named: UNNotificationSoundName(rawValue: reminder.fileURL!.lastPathComponent))
 //--------------what izit
 //            content.userInfo = ["value": "Data with local notification"]
             
