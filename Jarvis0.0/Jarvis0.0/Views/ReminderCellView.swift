@@ -14,18 +14,22 @@ struct ReminderCellView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .center){
-                Text(getHourFromDate(date: self.reminder.time))
-                    .font(.system(size: 40))
-                Text(self.reminder.name)
-            }
+
+            Text(getHourFromDate(date: self.reminder.time))
+                .font(.system(size: 40))
+                .frame(width: 110)
             Button(action: {
                 self.audioPlayer.startPlayback(audio: self.reminder.fileURL!)
             }) {
-                Text("Play")
+                Image(systemName: "play.circle")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 40))
+                    .padding()
             }
-            CustomToggle(isOn: self.$reminder.isOn)
+            Spacer()
+                CustomToggle(isOn: self.$reminder.isOn)
         }
+        .padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -30))
     }
 
     func getHourFromDate(date: Date) -> String {

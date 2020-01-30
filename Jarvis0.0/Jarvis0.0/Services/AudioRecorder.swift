@@ -21,7 +21,7 @@ class AudioRecorder: NSObject, ObservableObject{
     
     
     let objectWillChange = PassthroughSubject<AudioRecorder, Never>()
-    var audioRecorder: AVAudioRecorder!
+    var audioRecorder : AVAudioRecorder!
     var recordings = [Recording]()
     var recording = false {
         didSet {
@@ -60,6 +60,7 @@ class AudioRecorder: NSObject, ObservableObject{
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
+        
         do {
             audioRecorder = try AVAudioRecorder(url: targetUrl!, settings: settings)
             audioRecorder.record()

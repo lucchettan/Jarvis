@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11C1830823DB0DD300456E16 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1830723DB0DD300456E16 /* Reader.swift */; };
-		11C27F7823DEE35800B20424 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7723DEE35800B20424 /* Recording.swift */; };
 		11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7923DEE4A800B20424 /* Helper.swift */; };
 		11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */; };
 		11D420D023DDAAD7004D4BA4 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */; };
@@ -26,11 +25,14 @@
 		12275F1623AA97F3005867EC /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12275F1523AA97F3005867EC /* CustomToggle.swift */; };
 		12275F1823AB7933005867EC /* SubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12275F1723AB7933005867EC /* SubmitView.swift */; };
 		37256C9A23DC80E50069F9B0 /* ReminderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37256C9923DC80E50069F9B0 /* ReminderHandler.swift */; };
+		3727296D23E2CCE20070267A /* Submit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727296C23E2CCE20070267A /* Submit.swift */; };
+		3727296F23E3082A0070267A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727296E23E3082A0070267A /* ProgressView.swift */; };
+		374B1DC723E34AA700AA63D5 /* HelpCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */; };
+		379CD78B23E31F8100FD26EC /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CD78A23E31F8100FD26EC /* Recording.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11C1830723DB0DD300456E16 /* Reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
-		11C27F7723DEE35800B20424 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		11C27F7923DEE4A800B20424 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
@@ -50,6 +52,10 @@
 		12275F1523AA97F3005867EC /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		12275F1723AB7933005867EC /* SubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitView.swift; sourceTree = "<group>"; };
 		37256C9923DC80E50069F9B0 /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHandler.swift; sourceTree = "<group>"; };
+		3727296C23E2CCE20070267A /* Submit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submit.swift; sourceTree = "<group>"; };
+		3727296E23E3082A0070267A /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCircleView.swift; sourceTree = "<group>"; };
+		379CD78A23E31F8100FD26EC /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				12275F0F23AA8E7C005867EC /* Reminder.swift */,
-				11C27F7723DEE35800B20424 /* Recording.swift */,
+				379CD78A23E31F8100FD26EC /* Recording.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,7 +125,10 @@
 				12275F1323AA9250005867EC /* ReminderCellView.swift */,
 				12275F1523AA97F3005867EC /* CustomToggle.swift */,
 				12275F1723AB7933005867EC /* SubmitView.swift */,
+				3727296C23E2CCE20070267A /* Submit.swift */,
 				11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */,
+				3727296E23E3082A0070267A /* ProgressView.swift */,
+				374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,8 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12275EFC23AA8E10005867EC /* AppDelegate.swift in Sources */,
+				374B1DC723E34AA700AA63D5 /* HelpCircleView.swift in Sources */,
 				12275F1623AA97F3005867EC /* CustomToggle.swift in Sources */,
 				11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */,
+				3727296D23E2CCE20070267A /* Submit.swift in Sources */,
 				11C1830823DB0DD300456E16 /* Reader.swift in Sources */,
 				37256C9A23DC80E50069F9B0 /* ReminderHandler.swift in Sources */,
 				12275EFE23AA8E10005867EC /* SceneDelegate.swift in Sources */,
@@ -219,12 +230,13 @@
 				12275F0023AA8E10005867EC /* ContentView.swift in Sources */,
 				11D420D423DDC85A004D4BA4 /* RecordingList.swift in Sources */,
 				11D420D623DDD0A9004D4BA4 /* Extensions.swift in Sources */,
-				11C27F7823DEE35800B20424 /* Recording.swift in Sources */,
 				11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */,
 				12275F1423AA9250005867EC /* ReminderCellView.swift in Sources */,
+				379CD78B23E31F8100FD26EC /* Recording.swift in Sources */,
 				12275F1823AB7933005867EC /* SubmitView.swift in Sources */,
 				11D420D023DDAAD7004D4BA4 /* AnimatedButton.swift in Sources */,
 				12275F1023AA8E7C005867EC /* Reminder.swift in Sources */,
+				3727296F23E3082A0070267A /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

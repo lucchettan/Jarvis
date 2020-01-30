@@ -12,9 +12,7 @@ struct ContentView: View {
     @ObservedObject var audioRecorder = AudioRecorder()
     @State var isModal: Bool = false
     @State var reminders: [Reminder] = []
-    enum UserDefaultsKeys: String {
-        case reminder
-    }
+
     
     var body: some View {
        
@@ -27,14 +25,8 @@ struct ContentView: View {
                     }
 //----------------erase with the native deleting gesture
                     .onDelete(perform: self.deleteRow)
-                }.padding()
-                Button(action: {self.isModal = true}){
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.orange)
-                       
                 }
+                    .padding()
                     .onAppear{
                         let defaults = UserDefaults.standard
                         guard let remindersData = defaults.object(forKey: "reminders") as? Data else { return }
@@ -42,13 +34,14 @@ struct ContentView: View {
                         self.reminders = DecodedReminders
                     }
             }
-            .navigationBarTitle("Remind me!")
+                .navigationBarTitle("Remind me!")
+                .navigationBarItems(trailing: Button("Create"){ self.isModal = true}.foregroundColor(.orange))
         }
-            .sheet(isPresented: $isModal, content: {SubmitView(isModal: self.$isModal, reminders: self.$reminders)})
+            .sheet(isPresented: $isModal, content: {Submit(isModal: self.$isModal, reminders: self.$reminders)})
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
     
-//------Delete Reminder, we have to add deleting the sourcefile of Reminder.soundUrl
+//--Delete Reminder, we have to add deleting the sourcefile of Reminder.soundUrl
     private func deleteRow(at indexSet: IndexSet) {
         for index in indexSet {
             self.audioRecorder.deleteRecording(urlsToDelete: [self.reminders[Int(index)].fileURL!])
