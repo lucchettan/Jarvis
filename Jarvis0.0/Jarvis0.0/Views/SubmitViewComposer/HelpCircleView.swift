@@ -19,8 +19,7 @@ struct HelpCircleView: View {
                 .frame(width: 650, height: 650)
                 .offset(y: 400)
                 .animation(.spring())
-
-            Text("Record your 30s reminder")
+            Text("You have 30 seconds")
                 .bold()
                 .offset(y: 105)
                 .foregroundColor(.gray)

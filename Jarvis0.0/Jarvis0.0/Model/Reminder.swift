@@ -7,15 +7,15 @@
 //
 
 import Foundation
+import UserNotifications
+
 
 struct Reminder: Codable, Hashable{
     var id = UUID()
     var name: String
-//    var notification: UNNotificationRequest
     var time: Date
     var isOn: Bool
     
-//----- Trial
     var fileURL: URL?
-//    var createdAt: Date
+    var notificationID: String?
 }

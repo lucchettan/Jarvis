@@ -13,34 +13,34 @@ import UserNotifications
 class ReminderHandler {
     let center = UNUserNotificationCenter.current()
 
-        func create(reminder: Reminder) {
+        func create(reminder: Reminder) -> String {
             let content = UNMutableNotificationContent()
-            content.title = "Don't forget to:"
+            content.title = "Listen to me"
             content.body = reminder.name
             content.badge = 1
-            print("\n ------this is the last path: -------")
+            print("------this is the last path: -------")
             print(reminder.fileURL!.lastPathComponent)
-            print("------this is the url: -------")
-            print(reminder.fileURL!)
-            print("------last path components---")
-            print(reminder.fileURL!.pathComponents)
             
             content.sound =  UNNotificationSound(named: UNNotificationSoundName(rawValue: reminder.fileURL!.lastPathComponent))
-//--------------what izit
-//            content.userInfo = ["value": "Data with local notification"]
+
+            var triggerTime = Calendar.current.dateComponents([.hour,.minute,.second,], from: reminder.time)
+            triggerTime.second = 0
             
-            let gregorian = Calendar(identifier: .gregorian)
-            var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: reminder.time)
-            let date = gregorian.date(from: components)!
-            let triggerTime = Calendar.current.dateComponents([.hour,.minute,.second,], from: reminder.time)
             let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
 
             let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
-            
+            print(request.identifier)
             center.add(request) { (error) in
                 if error != nil {
                     print("Error = \(error?.localizedDescription ?? "error local notification")")
                 }
             }
+            print("-----------notification created and assigned")
+            return request.identifier
         }
+    
+    func unable(reminder: Reminder){
+        center.removePendingNotificationRequests(withIdentifiers: [reminder.notificationID!])
+        print("notification unabled")
+    }
 }

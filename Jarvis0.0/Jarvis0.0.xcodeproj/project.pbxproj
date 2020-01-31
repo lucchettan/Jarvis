@@ -121,16 +121,32 @@
 		37C9119723DF4D9E00295327 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37CB34EF23E4659000297CB7 /* SubmitViewComposer */,
+				37CB34EE23E4657700297CB7 /* ContentViewComposer */,
+				12275F1723AB7933005867EC /* SubmitView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37CB34EE23E4657700297CB7 /* ContentViewComposer */ = {
+			isa = PBXGroup;
+			children = (
 				12275EFF23AA8E10005867EC /* ContentView.swift */,
 				12275F1323AA9250005867EC /* ReminderCellView.swift */,
 				12275F1523AA97F3005867EC /* CustomToggle.swift */,
-				12275F1723AB7933005867EC /* SubmitView.swift */,
+			);
+			path = ContentViewComposer;
+			sourceTree = "<group>";
+		};
+		37CB34EF23E4659000297CB7 /* SubmitViewComposer */ = {
+			isa = PBXGroup;
+			children = (
 				3727296C23E2CCE20070267A /* Submit.swift */,
 				11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */,
 				3727296E23E3082A0070267A /* ProgressView.swift */,
 				374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */,
 			);
-			path = Views;
+			path = SubmitViewComposer;
 			sourceTree = "<group>";
 		};
 		37EA4C9823DB28880056F01E /* Services */ = {

@@ -27,7 +27,8 @@ struct ReminderCellView: View {
                     .padding()
             }
             Spacer()
-                CustomToggle(isOn: self.$reminder.isOn)
+            CustomToggle(reminder: $reminder)
+            
         }
         .padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -30))
     }

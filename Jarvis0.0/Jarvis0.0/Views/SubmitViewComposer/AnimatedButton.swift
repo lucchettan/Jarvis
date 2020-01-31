@@ -16,21 +16,21 @@
 
 import SwiftUI
 struct AnimatedButton: View {
-    //to help us create the wave around the recording button
+//--to help us create the wave around the recording button
     @State var animationAmount : CGFloat = 1
-    //to use audioRecording and audioPlaying functions
+//--to use audioRecording and audioPlaying functions
     @ObservedObject var audioRecorder = AudioRecorder()
     @ObservedObject var audioPlayer = AudioPlayer()
-    //to access an affect the properties of the reminder in the submitView
+//--to access an affect the properties of the reminder in the submitView
     @Binding var reminder: Reminder
     //boolean value to toggle the display of the different button through the user's needs
     @State var isRecording = false
     @State var recordIsPresent = false
-    //
+    //set initial value pof the progress bar
     @State var value : CGFloat = 0
     @State var time : Int = 0
     
-    //Start the timer
+//--Start the timer
     func launchTimer() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             print("plus 1")
@@ -44,7 +44,7 @@ struct AnimatedButton: View {
             }
         }
     }
-    //Stop and reset the timer
+//--Stop and reset the timer
     func resetTimer() {
         self.isRecording = false
         self.audioRecorder.stopRecording()
@@ -58,12 +58,12 @@ struct AnimatedButton: View {
                 ZStack {
                     HelpCircleView()
                         .animation(.spring())
-                        .offset(y: self.isRecording ? 0 : 100)
+                        .offset(y: self.isRecording ? -10 : 100)
                 }
 //--------------Progress View of the recording session for 30sec
                 ProgressView(value: self.$value, time: self.$time)
                 VStack {
-//------------------Record Button if we are not recording and we don't have any records
+//--------------Record Button if we are not recording and we don't have any records
                     if recordIsPresent == false {
                         if isRecording == false {
                             //We display a MicroButton to start recording something
@@ -78,7 +78,7 @@ struct AnimatedButton: View {
                                     .padding()
                             }
                         } else {
-//--------------------------Stop button to stop and save the recording session
+//---------------Stop button to stop and save the recording session
                             Button(action: {
                                 self.recordIsPresent = true
                                 self.time = 29
@@ -90,7 +90,7 @@ struct AnimatedButton: View {
                             }
                         }
                     } else {
-//--------------------------Play button to hear what is recorded
+//----------------Play button to hear what is recorded
                             Button(action: {
                                 self.audioPlayer.startPlayback(audio: self.reminder.fileURL!)
                             }) {
@@ -101,14 +101,14 @@ struct AnimatedButton: View {
                             }
                     }
                 }
-                //Stroke to animate a wave around our button
+//----------------Stroke to animate a wave around our button
                 .overlay(Circle()
                     .stroke(Color.orange)
                     .scaleEffect(animationAmount - 0.4)
                     .opacity(Double(2 - animationAmount))
                     .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
                 ).onAppear(){ self.animationAmount = 2 }
-//----------Restart Btn to startOver and record something else
+//----------------Restart Btn to startOver and record something else
                 if recordIsPresent && !isRecording {
                     Button(action: {
                         //erase the audio recorded
@@ -129,6 +129,9 @@ struct AnimatedButton: View {
                     .offset(x: 135)
                 }
             }
+        }
+        .onDisappear {
+            self.time = 29
         }
         .frame(height: 200)
     }

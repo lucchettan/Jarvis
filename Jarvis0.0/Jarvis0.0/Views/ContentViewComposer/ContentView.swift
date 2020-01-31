@@ -20,7 +20,7 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(reminders, id: \.self) { reminder in
-                        ReminderCellView(reminder: reminder).frame(height: 50)
+                        ReminderCellView(reminder: reminder).frame(height: 40)
                             .padding()
                     }
 //----------------erase with the native deleting gesture
@@ -34,8 +34,13 @@ struct ContentView: View {
                         self.reminders = DecodedReminders
                     }
             }
-                .navigationBarTitle("Remind me!")
-                .navigationBarItems(trailing: Button("Create"){ self.isModal = true}.foregroundColor(.orange))
+                .navigationBarTitle("Remind me")
+                .navigationBarItems(trailing: Button("+"){
+                    self.isModal.toggle()
+                    print("")
+                }
+                .font(.system(size: 40))
+                .foregroundColor(.orange))
         }
             .sheet(isPresented: $isModal, content: {Submit(isModal: self.$isModal, reminders: self.$reminders)})
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
