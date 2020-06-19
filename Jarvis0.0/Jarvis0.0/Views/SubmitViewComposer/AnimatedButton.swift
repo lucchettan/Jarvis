@@ -123,10 +123,6 @@ struct AnimatedButton: View {
                         self.audioRecorder.deleteRecording(urlsToDelete: [self.reminder.fileURL!])
                         self.recordIsPresent = false
                         self.reminder.fileURL = nil
-//                       //restart an audio
-                        self.reminder.fileURL = self.audioRecorder.startRecording()
-                        self.isRecording = true
-                        self.launchTimer()
                     }) {
                         Image(systemName: "gobackward")
                             .foregroundColor(.orange)
