@@ -11,7 +11,8 @@ import SwiftUI
 struct ReminderCellView: View {
     @ObservedObject var audioPlayer = AudioPlayer()
     @State var reminder: Reminder
-    
+    @State var reminders : [Reminder]
+
     var body: some View {
         HStack {
             Text(getHourFromDate(date: self.reminder.time))
@@ -26,7 +27,7 @@ struct ReminderCellView: View {
                     .padding()
             }
             Spacer()
-            CustomToggle(reminder: $reminder)
+            CustomToggle(reminder: $reminder,reminders: self.reminders)
             
         }
         .padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -30))

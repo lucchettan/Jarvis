@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CustomToggle: View {
     @Binding var reminder: Reminder
+    @State var reminders : [Reminder]
     var body: some View {
         HStack {
             if self.reminder.isOn { Spacer() }
@@ -26,14 +27,21 @@ struct CustomToggle: View {
         .cornerRadius(50)
 //------remove and append the notification to the notificationcenter depending on the toggle
         .onTapGesture {
-            if self.reminder.isOn {
-                ReminderHandler().unable(reminder: self.reminder)
-            } else {
-                self.reminder.notificationID = ReminderHandler().create(reminder: self.reminder)
-                print("------toggle step 1 creating ------")
-                print(self.reminder)
+            for i in 0..<self.reminders.count {
+                if self.reminders[i] == self.reminder {
+                    if self.reminder.isOn {
+                        ReminderHandler().unable(reminder: self.reminder)
+                    } else {
+                        self.reminder.notificationID = ReminderHandler().create(reminder: self.reminder)
+                        print("------toggle step 1 creating ------")
+                        print(self.reminder)
+                    }
+                    self.reminder.isOn.toggle()
+                    self.reminders[i] = self.reminder
+                }
             }
-            self.reminder.isOn.toggle()
+            let defaults = UserDefaults.standard
+            defaults.set(try? PropertyListEncoder().encode(self.reminders), forKey: "reminders")
             print("-----finish toggling-----")
             print(self.reminder)
         }

@@ -68,7 +68,6 @@ struct Submit: View {
                 //Creating the notification and assigning the requestID to the notificationID value of the reminder
                 self.newReminder.notificationID = ReminderHandler().create(reminder: self.newReminder)
                 self.reminders.append(self.newReminder)
-                //Make the page disappear
                 self.isModal.toggle()
                 let defaults = UserDefaults.standard
                 defaults.set(try? PropertyListEncoder().encode(self.reminders), forKey: "reminders")

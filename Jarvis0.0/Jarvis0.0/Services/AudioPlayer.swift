@@ -44,13 +44,11 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         isPlaying = false
     }
     
-    
 //----- delegate func avaudioplayer
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             isPlaying = false
         }
     }
-    
     
 }

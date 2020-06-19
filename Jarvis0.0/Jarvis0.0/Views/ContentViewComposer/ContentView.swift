@@ -20,7 +20,7 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(reminders, id: \.self) { reminder in
-                        ReminderCellView(reminder: reminder).frame(height: 40)
+                        ReminderCellView(reminder: reminder, reminders: self.reminders).frame(height: 40)
                             .padding()
                     }
 //----------------erase with the native deleting gesture
