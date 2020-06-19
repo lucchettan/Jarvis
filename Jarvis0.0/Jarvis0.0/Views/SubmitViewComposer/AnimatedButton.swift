@@ -39,7 +39,6 @@ struct AnimatedButton: View {
             if self.time == 30 {
                 print("it's over")
                 timer.invalidate()
-                self.recordIsPresent = true
                 self.resetTimer()
             }
         }
@@ -64,58 +63,67 @@ struct AnimatedButton: View {
                 ProgressView(value: self.$value, time: self.$time)
                 VStack {
 //--------------Record Button if we are not recording and we don't have any records
-                    if recordIsPresent == false {
-                        if isRecording == false {
-                            //We display a MicroButton to start recording something
-                            Button(action: {
-                                self.reminder.fileURL = self.audioRecorder.startRecording()
-                                self.isRecording = true
-                                self.launchTimer()
-                            }){
-                                Image(systemName: "mic.circle")
-                                    .foregroundColor(.orange)
-                                    .font(.system(size: 100))
-                                    .padding()
-                            }
-                        } else {
-//---------------Stop button to stop and save the recording session
-                            Button(action: {
-                                self.recordIsPresent = true
-                                self.time = 29
-                            }){
-                                Image(systemName: "stop.circle")
-                                    .foregroundColor(.orange)
-                                    .font(.system(size: 100))
-                                    .padding()
-                            }
+                    if !recordIsPresent {
+//                        if !isRecording {
+                             /* Record button */
+                            Image(systemName: "mic.circle")
+                                .foregroundColor(.orange)
+                                .font(.system(size: 100))
+                                .padding()
+                                .onLongPressGesture {
+                                    self.reminder.fileURL = self.audioRecorder.startRecording()
+                                    self.isRecording = true
+                                    self.launchTimer()
+                                }
+                                .simultaneousGesture(
+                                    DragGesture()
+                                        .onEnded {_ in
+                                            self.recordIsPresent = true
+                                            self.time = 29
+                                    }
+                                )
+//                                .onTapGesture {
+//                                    self.reminder.fileURL = self.audioRecorder.startRecording()
+//                                    self.isRecording = true
+//                                    self.launchTimer()
+//                                }
+//                        } else {
+//                            Button(action: {
+//                                self.recordIsPresent = true
+//                                self.time = 29
+//                            }){
+//                                Image(systemName: "stop.circle")
+//                                    .foregroundColor(.orange)
+//                                    .font(.system(size: 100))
+//                                    .padding()
+//                            }
+//                        }
+                    } else  {
+                        Button(action: { self.audioPlayer.startPlayback(audio: self.reminder.fileURL!) }){
+                            Image(systemName: "play.circle")
+                                .foregroundColor(.orange)
+                                .font(.system(size: 100))
+                                .padding()
                         }
-                    } else {
-//----------------Play button to hear what is recorded
-                            Button(action: {
-                                self.audioPlayer.startPlayback(audio: self.reminder.fileURL!)
-                            }) {
-                                Image(systemName: "play.circle")
-                                    .foregroundColor(.orange)
-                                    .font(.system(size: 100))
-                                    .padding()
-                            }
                     }
                 }
-//----------------Stroke to animate a wave around our button
-                .overlay(Circle()
-                    .stroke(Color.orange)
-                    .scaleEffect(animationAmount - 0.4)
-                    .opacity(Double(2 - animationAmount))
-                    .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                ).onAppear(){ self.animationAmount = 2 }
-//----------------Restart Btn to startOver and record something else
+//--------------Stroke to animate a wave around our button
+                .overlay(
+                    Circle()
+                        .stroke(Color.orange)
+                        .scaleEffect(self.recordIsPresent ? animationAmount - 0.4 : animationAmount - 0.8)
+                        .opacity(Double(2 - animationAmount))
+                        .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                )
+                .onAppear(){ self.animationAmount = 2 }
+//--------------Restart Btn to startOver and record something else
                 if recordIsPresent && !isRecording {
                     Button(action: {
                         //erase the audio recorded
                         self.audioRecorder.deleteRecording(urlsToDelete: [self.reminder.fileURL!])
                         self.recordIsPresent = false
                         self.reminder.fileURL = nil
-                        //restart an audio
+//                       //restart an audio
                         self.reminder.fileURL = self.audioRecorder.startRecording()
                         self.isRecording = true
                         self.launchTimer()
@@ -130,9 +138,31 @@ struct AnimatedButton: View {
                 }
             }
         }
-        .onDisappear {
-            self.time = 29
-        }
+        .onDisappear { self.time = 29 }
         .frame(height: 200)
     }
 }
+
+
+
+
+//@GestureState var isDetectingLongPress = false
+//@State var completedLongPress = false
+//var longPress: some Gesture {
+//    LongPressGesture(minimumDuration: 30)
+//        .onChanged({_ in
+//            print("longpress detected")
+//            self.reminder.fileURL = self.audioRecorder.startRecording()
+//            self.isRecording = true
+//            self.launchTimer()
+//        })
+//        .updating($isDetectingLongPress) { currentstate, gestureState,
+//                transaction in
+//            gestureState = currentstate
+//            transaction.animation = Animation.easeIn(duration: 1.0)
+//        }
+//        .onEnded { finished in
+//            self.completedLongPress = finished
+//            print("-------start recording-------")
+//        }
+//}

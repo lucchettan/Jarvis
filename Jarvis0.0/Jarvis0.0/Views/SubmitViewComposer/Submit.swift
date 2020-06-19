@@ -51,10 +51,8 @@ struct Submit: View {
                 Text("Record yourself")
                     .font(.headline)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: -10, trailing: 0))
-                
                 AnimatedButton(reminder: $newReminder)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-
             }
             .frame(height: 500)
             .navigationBarTitle("New vocal reminder")

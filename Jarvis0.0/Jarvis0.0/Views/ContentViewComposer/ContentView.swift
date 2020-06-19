@@ -48,8 +48,10 @@ struct ContentView: View {
     
 //--Delete Reminder, we have to add deleting the sourcefile of Reminder.soundUrl
     private func deleteRow(at indexSet: IndexSet) {
+        
         for index in indexSet {
             self.audioRecorder.deleteRecording(urlsToDelete: [self.reminders[Int(index)].fileURL!])
+            ReminderHandler().unable(reminder: self.reminders[Int(index)])
         }
         self.reminders.remove(atOffsets: indexSet)
     }

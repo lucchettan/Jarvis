@@ -51,7 +51,7 @@
 		12275F1323AA9250005867EC /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
 		12275F1523AA97F3005867EC /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		12275F1723AB7933005867EC /* SubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitView.swift; sourceTree = "<group>"; };
-		37256C9923DC80E50069F9B0 /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHandler.swift; sourceTree = "<group>"; };
+		37256C9923DC80E50069F9B0 /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReminderHandler.swift; path = Jarvis0.0/Services/ReminderHandler.swift; sourceTree = SOURCE_ROOT; };
 		3727296C23E2CCE20070267A /* Submit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submit.swift; sourceTree = "<group>"; };
 		3727296E23E3082A0070267A /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCircleView.swift; sourceTree = "<group>"; };
@@ -121,9 +121,10 @@
 		37C9119723DF4D9E00295327 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11D420D323DDC85A004D4BA4 /* RecordingList.swift */,
+				12275F1723AB7933005867EC /* SubmitView.swift */,
 				37CB34EF23E4659000297CB7 /* SubmitViewComposer */,
 				37CB34EE23E4657700297CB7 /* ContentViewComposer */,
-				12275F1723AB7933005867EC /* SubmitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,12 +154,11 @@
 			isa = PBXGroup;
 			children = (
 				11C1830723DB0DD300456E16 /* Reader.swift */,
-				37256C9923DC80E50069F9B0 /* ReminderHandler.swift */,
 				11D420D123DDB37D004D4BA4 /* AudioRecorder.swift */,
+				37256C9923DC80E50069F9B0 /* ReminderHandler.swift */,
 				11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */,
 				11D420D523DDD0A9004D4BA4 /* Extensions.swift */,
 				11C27F7923DEE4A800B20424 /* Helper.swift */,
-				11D420D323DDC85A004D4BA4 /* RecordingList.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

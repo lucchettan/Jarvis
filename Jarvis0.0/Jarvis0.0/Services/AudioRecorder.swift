@@ -44,15 +44,8 @@ class AudioRecorder: NSObject, ObservableObject{
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")).m4a")
         
-        
         let filename = audioFilename.lastPathComponent
         let targetUrl = try? FileManager.default.soundsLibraryURL(for: filename)
-        
-//        let path = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
-//        let url = path[0].appendingPathComponent("Sounds", isDirectory: true)
-//        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: false, attributes: nil)
-//        try? FileManager.default.copyItem(atPath: audioFilename.path, toPath: "\(url.path)"+"\(audioFilename)")
-
 
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -105,7 +98,6 @@ class AudioRecorder: NSObject, ObservableObject{
 
 
 extension FileManager {
-
     func soundsLibraryURL(for filename: String) throws -> URL {
         let libraryURL = try url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let soundFolderURL = libraryURL.appendingPathComponent("Sounds", isDirectory: true)

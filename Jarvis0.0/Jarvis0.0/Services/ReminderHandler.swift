@@ -35,12 +35,12 @@ class ReminderHandler {
                     print("Error = \(error?.localizedDescription ?? "error local notification")")
                 }
             }
-            print("-----------notification created and assigned")
+            print("-----------notification created and assigned-------------")
             return request.identifier
         }
     
     func unable(reminder: Reminder){
         center.removePendingNotificationRequests(withIdentifiers: [reminder.notificationID!])
-        print("notification unabled")
+        print("---------Notification unabled----------")
     }
 }

@@ -14,7 +14,6 @@ struct ReminderCellView: View {
     
     var body: some View {
         HStack {
-
             Text(getHourFromDate(date: self.reminder.time))
                 .font(.system(size: 40))
                 .frame(width: 110)
