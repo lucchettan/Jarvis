@@ -10,7 +10,7 @@
 /*
  Here we have the Recording Button Animated
     -launch a recordingsession on the first push
-    -stop it when we push again
+    -stop it the push finishes and has detecteda drag
     -restart the recordingsession
  */
 
