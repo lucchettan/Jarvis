@@ -64,40 +64,23 @@ struct AnimatedButton: View {
                 VStack {
 //--------------Record Button if we are not recording and we don't have any records
                     if !recordIsPresent {
-//                        if !isRecording {
-                             /* Record button */
+                        Button(action: {
+                            self.recordIsPresent = true
+                            self.time = 29
+                        }) {
                             Image(systemName: "mic.circle")
                                 .foregroundColor(.orange)
                                 .font(.system(size: 100))
                                 .padding()
-                                .onLongPressGesture {
-                                    self.reminder.fileURL = self.audioRecorder.startRecording()
-                                    self.isRecording = true
-                                    self.launchTimer()
-                                }
-                                .simultaneousGesture(
-                                    DragGesture()
-                                        .onEnded {_ in
-                                            self.recordIsPresent = true
-                                            self.time = 29
-                                    }
-                                )
-//                                .onTapGesture {
-//                                    self.reminder.fileURL = self.audioRecorder.startRecording()
-//                                    self.isRecording = true
-//                                    self.launchTimer()
-//                                }
-//                        } else {
-//                            Button(action: {
-//                                self.recordIsPresent = true
-//                                self.time = 29
-//                            }){
-//                                Image(systemName: "stop.circle")
-//                                    .foregroundColor(.orange)
-//                                    .font(.system(size: 100))
-//                                    .padding()
-//                            }
-//                        }
+
+                        }
+                        .simultaneousGesture(
+                            LongPressGesture(minimumDuration: 0.2).onEnded({ _ in
+                                self.reminder.fileURL = self.audioRecorder.startRecording()
+                                self.isRecording = true
+                                self.launchTimer()
+                            })
+                        )
                     } else  {
                         Button(action: { self.audioPlayer.startPlayback(audio: self.reminder.fileURL!) }){
                             Image(systemName: "play.circle")
