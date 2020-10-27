@@ -29,7 +29,7 @@
 		374B1DC723E34AA700AA63D5 /* HelpCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */; };
 		379CD78B23E31F8100FD26EC /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CD78A23E31F8100FD26EC /* Recording.swift */; };
 		FA7ABD452540984600242FD3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7ABD442540984600242FD3 /* HomeView.swift */; };
-		FA7ABD4925409C6400242FD3 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7ABD4825409C6400242FD3 /* ReminderView.swift */; };
+		FAB61D50254887A000CF9F6C /* AudioRec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB61D4F254887A000CF9F6C /* AudioRec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,7 @@
 		374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCircleView.swift; sourceTree = "<group>"; };
 		379CD78A23E31F8100FD26EC /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		FA7ABD442540984600242FD3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FA7ABD4825409C6400242FD3 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		FAB61D4F254887A000CF9F6C /* AudioRec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,7 @@
 		12275EFA23AA8E10005867EC /* Jarvis0.0 */ = {
 			isa = PBXGroup;
 			children = (
+				FAB61D4E2548875300CF9F6C /* AudioServices */,
 				FA7ABD432540982800242FD3 /* New Views */,
 				37C9119723DF4D9E00295327 /* Views */,
 				37256C9B23DC8C8C0069F9B0 /* Model */,
@@ -169,9 +170,16 @@
 			isa = PBXGroup;
 			children = (
 				FA7ABD442540984600242FD3 /* HomeView.swift */,
-				FA7ABD4825409C6400242FD3 /* ReminderView.swift */,
 			);
 			path = "New Views";
+			sourceTree = "<group>";
+		};
+		FAB61D4E2548875300CF9F6C /* AudioServices */ = {
+			isa = PBXGroup;
+			children = (
+				FAB61D4F254887A000CF9F6C /* AudioRec.swift */,
+			);
+			path = AudioServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +259,6 @@
 				11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */,
 				3727296D23E2CCE20070267A /* Submit.swift in Sources */,
 				11C1830823DB0DD300456E16 /* Reader.swift in Sources */,
-				FA7ABD4925409C6400242FD3 /* ReminderView.swift in Sources */,
 				37256C9A23DC80E50069F9B0 /* ReminderHandler.swift in Sources */,
 				12275EFE23AA8E10005867EC /* SceneDelegate.swift in Sources */,
 				046D13192540588C00375EFA /* RoundAnimationEffect.swift in Sources */,
@@ -261,6 +268,7 @@
 				11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */,
 				12275F1423AA9250005867EC /* ReminderCellView.swift in Sources */,
 				379CD78B23E31F8100FD26EC /* Recording.swift in Sources */,
+				FAB61D50254887A000CF9F6C /* AudioRec.swift in Sources */,
 				11D420D023DDAAD7004D4BA4 /* AnimatedButton.swift in Sources */,
 				12275F1023AA8E7C005867EC /* Reminder.swift in Sources */,
 				3727296F23E3082A0070267A /* ProgressView.swift in Sources */,

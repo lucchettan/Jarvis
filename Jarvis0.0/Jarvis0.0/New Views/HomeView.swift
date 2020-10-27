@@ -15,19 +15,24 @@ struct HomeView: View {
     @State var showDateReminder = false
     var haptics = UINotificationFeedbackGenerator()
     
+    @ObservedObject var audioRec: AudioRecorder
+    
     //MARK:- BODY
     var body: some View {
         
         ZStack {
             NavigationView {
                 ZStack {
+                    DateSelectionView(showReminder: $showReminder)
                     VStack {
-                        Text("Aucun Enregistrement")
+                        Text("Aucun enregistrement vocal")
                             .font(.system(size: 22, weight: .thin))
-                        DateSelectionView(showDateReminder: $showDateReminder)
+                        
                     VStack {
-                        Button(action: {showReminder.toggle()
-                            showDateReminder.toggle() })
+                        Button(action: {
+                            showReminder.toggle()
+                            haptics.notificationOccurred(.success)
+                        })
                         {
                         Circle()
                             .foregroundColor(.pink)
@@ -41,29 +46,32 @@ struct HomeView: View {
                             })
                              .shadow(radius: 8)
                             }
+                        .blur(radius: showReminder ? 1 : 0)
                         } //:Vstack
-                         .offset(x: 140, y: 240)
+                         .offset(x: 140, y: 300)
                          .navigationBarTitle(Text("Recordings"), displayMode: .inline)
+                    
                     }
+                    .blur(radius: showReminder ? 1 : 0)
                 }
             }
-            
-            }
-        }
-     }
+         }
+
+      }
+   }
     
 
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(audioRec: AudioRecorder())
             .preferredColorScheme(.light)
     }
 }
 
 struct DateSelectionView: View {
     
-    @Binding var showDateReminder: Bool
+    @Binding var showReminder: Bool
     @State var date = Date()
     
     var body: some View {
@@ -76,6 +84,7 @@ struct DateSelectionView: View {
                     Text("Select the moment")
                         .font(.caption)
                         .foregroundColor(.primary)
+                        .padding(.bottom,10)
                     HStack {
                         Image(systemName: "calendar.circle.fill")
                         .renderingMode(.original)
@@ -86,7 +95,7 @@ struct DateSelectionView: View {
                     }
                     Spacer()
                     Button(action: {
-                        showDateReminder.toggle()
+                        showReminder.toggle()
                     }) {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .frame(width: 170, height: 30)
@@ -99,7 +108,7 @@ struct DateSelectionView: View {
                    }.padding()
             )
         
-            .offset(x: 0, y: showDateReminder ? 0 : 480)
+            .offset(x: 0, y: showReminder ? 60 : 500)
             .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5))
     }
 }
