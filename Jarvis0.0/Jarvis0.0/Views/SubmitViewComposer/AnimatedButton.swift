@@ -75,7 +75,7 @@ struct AnimatedButton: View {
 
                         }
                         .simultaneousGesture(
-                            LongPressGesture(minimumDuration: 0.2).onEnded({ _ in
+                            LongPressGesture(minimumDuration: 0.1).onEnded({ _ in
                                 self.reminder.fileURL = self.audioRecorder.startRecording()
                                 self.isRecording = true
                                 self.launchTimer()

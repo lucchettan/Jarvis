@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04421D30254835BF007D015B /* PressAndHoldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04421D2F254835BF007D015B /* PressAndHoldButton.swift */; };
 		046D13192540588C00375EFA /* RoundAnimationEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D13182540588C00375EFA /* RoundAnimationEffect.swift */; };
 		11C1830823DB0DD300456E16 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1830723DB0DD300456E16 /* Reader.swift */; };
 		11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7923DEE4A800B20424 /* Helper.swift */; };
@@ -31,7 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		046D13182540588C00375EFA /* RoundAnimationEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundAnimationEffect.swift; sourceTree = "<group>"; };
+		04421D2F254835BF007D015B /* PressAndHoldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAndHoldButton.swift; sourceTree = "<group>"; };
+		046D13182540588C00375EFA /* RoundAnimationEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundAnimationEffect.swift; path = Jarvis0.0/Views/RoundAnimationEffect.swift; sourceTree = SOURCE_ROOT; };
 		11C1830723DB0DD300456E16 /* Reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		11C27F7923DEE4A800B20424 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				12275EFF23AA8E10005867EC /* ContentView.swift */,
 				12275F1323AA9250005867EC /* ReminderCellView.swift */,
 				12275F1523AA97F3005867EC /* CustomToggle.swift */,
+				04421D2F254835BF007D015B /* PressAndHoldButton.swift */,
 			);
 			path = ContentViewComposer;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04421D30254835BF007D015B /* PressAndHoldButton.swift in Sources */,
 				12275EFC23AA8E10005867EC /* AppDelegate.swift in Sources */,
 				374B1DC723E34AA700AA63D5 /* HelpCircleView.swift in Sources */,
 				12275F1623AA97F3005867EC /* CustomToggle.swift in Sources */,
