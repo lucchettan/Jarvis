@@ -34,7 +34,7 @@ struct ContentView: View {
                         self.reminders = DecodedReminders
                     }
             }
-                .navigationBarTitle("Remind me")
+                .navigationBarTitle("Recordings")
                 .navigationBarItems(trailing: Button("+"){
                     self.isModal.toggle()
                     print("")
