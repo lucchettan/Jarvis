@@ -11,7 +11,7 @@ import AVFoundation
 import Combine
 
 
-class AudioRecorder: NSObject, ObservableObject{
+class AudioRecorder: NSObject, ObservableObject {
 /* Here we have the recording functions
      -startRecording()                      -> Launch a recording sessions a create a file at a new url to replay what we be recorded
      -stopRecording()                       -> Endup the current recording session fetching the new data with the rest of them
@@ -19,9 +19,8 @@ class AudioRecorder: NSObject, ObservableObject{
      -deleteRecording(urlsToDelete: [URL])  -> Delete the files at the specified array of URL's
 */
     
-    
     let objectWillChange = PassthroughSubject<AudioRecorder, Never>()
-    var audioRecorder : AVAudioRecorder!
+    var audioRecorder = AVAudioRecorder()
     var recordings = [Recording]()
     var recording = false {
         didSet {
@@ -46,7 +45,7 @@ class AudioRecorder: NSObject, ObservableObject{
         
         let filename = audioFilename.lastPathComponent
         let targetUrl = try? FileManager.default.soundsLibraryURL(for: filename)
-
+        print(targetUrl)
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 44100,
@@ -55,18 +54,18 @@ class AudioRecorder: NSObject, ObservableObject{
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: targetUrl!, settings: settings)
-            audioRecorder.record()
+            self.audioRecorder = try AVAudioRecorder(url: targetUrl!, settings: settings)
+            self.audioRecorder.record()
             recording = true
             print("----------finish creating--------")
             return targetUrl
         } catch { print("Could not start recording") }
-        return nil
+        return targetUrl
     }
     
     
     func stopRecording() {
-        audioRecorder.stop()
+        self.audioRecorder.stop()
         recording = false
         fetchRecordings()
         print("---------finish recording---------")
