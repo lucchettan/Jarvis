@@ -22,7 +22,7 @@ struct ReminderCellView: View {
                 self.audioPlayer.startPlayback(audio: self.reminder.fileURL!)
             }) {
                 Image(systemName: "play.circle")
-                    .foregroundColor(.orange)
+                    .foregroundColor(.pink)
                     .font(.system(size: 40))
                     .padding()
             }
@@ -30,7 +30,7 @@ struct ReminderCellView: View {
             CustomToggle(reminder: $reminder,reminders: self.reminders)
             
         }
-        .padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -30))
+        .padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -20))
     }
 
     func getHourFromDate(date: Date) -> String {

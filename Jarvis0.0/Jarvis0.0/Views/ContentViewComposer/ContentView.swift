@@ -37,17 +37,19 @@ struct ContentView: View {
                                 ForEach(reminders, id: \.self) { reminder in
                                     ReminderCellView(reminder: reminder, reminders: self.reminders).frame(height: 40)
                                         .padding()
+
                                 }
                                 //----------------erase with the native deleting gesture
                                 .onDelete(perform: self.deleteRow)
                             }
-                                .padding()
+                            .padding()
+                            .background(Color(UIColor.systemBackground))
                         }
                     }
                         .onAppear{
                             let defaults = UserDefaults.standard
                             guard let remindersData = defaults.object(forKey: "reminders") as? Data else { return }
-                            guard let DecodedReminders = try? PropertyListDecoder().decode([Reminder].self, from: remindersData) as! [Reminder] else { return }
+                            guard let DecodedReminders = try? PropertyListDecoder().decode([Reminder].self, from: remindersData) else { return }
                             self.reminders = DecodedReminders
                         }
                     .navigationBarTitle(Text("Recordings"), displayMode: .inline)

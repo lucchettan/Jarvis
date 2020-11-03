@@ -48,11 +48,11 @@ struct PressAndHoldButton: View {
                     .resizable()
                     .frame(width: 55, height: 55)
                     .foregroundColor(.pink)
-                    .shadow(radius: 8)
+                    .background(Circle().frame(width: 55, height: 55).foregroundColor(Color(UIColor.systemBackground)).shadow(radius: 8))
             }
         }
         .simultaneousGesture(
-            LongPressGesture(minimumDuration: 0.1).onEnded({ _ in
+            LongPressGesture(minimumDuration: 0.07).onEnded({ _ in
                 
                 print("I'm in the sumultaneous long press ")
                 //1- Those action will be triggered when the hold is detected.
