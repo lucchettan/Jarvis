@@ -15,6 +15,7 @@ struct Reminder: Codable, Hashable{
     var name: String
     var time: Date
     var isOn: Bool
+//  var weekdayRecurrence : []
     
     var fileURL: URL?
     var notificationID: String?

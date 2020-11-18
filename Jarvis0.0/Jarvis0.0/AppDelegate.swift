@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("User gave permissions for local notifications")
             }
         }
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+
         return true
     }
 

@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		04421D30254835BF007D015B /* PressAndHoldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04421D2F254835BF007D015B /* PressAndHoldButton.swift */; };
 		046D13192540588C00375EFA /* RoundAnimationEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D13182540588C00375EFA /* RoundAnimationEffect.swift */; };
-		0473933B25488B2300AD5B58 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473933A25488B2300AD5B58 /* HomeView.swift */; };
+		047027FE25599C880068EE72 /* ModifyAudioPressAndHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047027FD25599C880068EE72 /* ModifyAudioPressAndHold.swift */; };
 		0473933E25488D6F00AD5B58 /* DateSelectionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473933D25488D6F00AD5B58 /* DateSelectionModal.swift */; };
 		04739341254890EA00AD5B58 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04739340254890EA00AD5B58 /* BlurView.swift */; };
 		11C1830823DB0DD300456E16 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1830723DB0DD300456E16 /* Reader.swift */; };
 		11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7923DEE4A800B20424 /* Helper.swift */; };
 		11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */; };
-		11D420D023DDAAD7004D4BA4 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */; };
 		11D420D223DDB37D004D4BA4 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D420D123DDB37D004D4BA4 /* AudioRecorder.swift */; };
 		11D420D623DDD0A9004D4BA4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D420D523DDD0A9004D4BA4 /* Extensions.swift */; };
 		12275EFC23AA8E10005867EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12275EFB23AA8E10005867EC /* AppDelegate.swift */; };
@@ -28,22 +27,18 @@
 		12275F1423AA9250005867EC /* ReminderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12275F1323AA9250005867EC /* ReminderCellView.swift */; };
 		12275F1623AA97F3005867EC /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12275F1523AA97F3005867EC /* CustomToggle.swift */; };
 		37256C9A23DC80E50069F9B0 /* ReminderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37256C9923DC80E50069F9B0 /* ReminderHandler.swift */; };
-		3727296D23E2CCE20070267A /* Submit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727296C23E2CCE20070267A /* Submit.swift */; };
-		3727296F23E3082A0070267A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3727296E23E3082A0070267A /* ProgressView.swift */; };
-		374B1DC723E34AA700AA63D5 /* HelpCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */; };
 		379CD78B23E31F8100FD26EC /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CD78A23E31F8100FD26EC /* Recording.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04421D2F254835BF007D015B /* PressAndHoldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PressAndHoldButton.swift; path = Jarvis0.0/Views/ContentViewComposer/PressAndHoldButton.swift; sourceTree = SOURCE_ROOT; };
 		046D13182540588C00375EFA /* RoundAnimationEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundAnimationEffect.swift; path = Jarvis0.0/Views/RoundAnimationEffect.swift; sourceTree = SOURCE_ROOT; };
-		0473933A25488B2300AD5B58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		047027FD25599C880068EE72 /* ModifyAudioPressAndHold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyAudioPressAndHold.swift; sourceTree = "<group>"; };
 		0473933D25488D6F00AD5B58 /* DateSelectionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionModal.swift; sourceTree = "<group>"; };
 		04739340254890EA00AD5B58 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		11C1830723DB0DD300456E16 /* Reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		11C27F7923DEE4A800B20424 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		11C27F7B23DEFCB900B20424 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
 		11D420D123DDB37D004D4BA4 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		11D420D523DDD0A9004D4BA4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		12275EF823AA8E10005867EC /* Jarvis0.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jarvis0.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,9 +53,6 @@
 		12275F1323AA9250005867EC /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
 		12275F1523AA97F3005867EC /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		37256C9923DC80E50069F9B0 /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReminderHandler.swift; path = Jarvis0.0/Services/ReminderHandler.swift; sourceTree = SOURCE_ROOT; };
-		3727296C23E2CCE20070267A /* Submit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submit.swift; sourceTree = "<group>"; };
-		3727296E23E3082A0070267A /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCircleView.swift; sourceTree = "<group>"; };
 		379CD78A23E31F8100FD26EC /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,10 +119,8 @@
 		37C9119723DF4D9E00295327 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0473933A25488B2300AD5B58 /* HomeView.swift */,
 				046D13182540588C00375EFA /* RoundAnimationEffect.swift */,
 				04739340254890EA00AD5B58 /* BlurView.swift */,
-				37CB34EF23E4659000297CB7 /* SubmitViewComposer */,
 				37CB34EE23E4657700297CB7 /* ContentViewComposer */,
 			);
 			path = Views;
@@ -142,21 +132,11 @@
 				12275EFF23AA8E10005867EC /* ContentView.swift */,
 				12275F1323AA9250005867EC /* ReminderCellView.swift */,
 				12275F1523AA97F3005867EC /* CustomToggle.swift */,
-				04421D2F254835BF007D015B /* PressAndHoldButton.swift */,
 				0473933D25488D6F00AD5B58 /* DateSelectionModal.swift */,
+				04421D2F254835BF007D015B /* PressAndHoldButton.swift */,
+				047027FD25599C880068EE72 /* ModifyAudioPressAndHold.swift */,
 			);
 			path = ContentViewComposer;
-			sourceTree = "<group>";
-		};
-		37CB34EF23E4659000297CB7 /* SubmitViewComposer */ = {
-			isa = PBXGroup;
-			children = (
-				3727296C23E2CCE20070267A /* Submit.swift */,
-				11D420CF23DDAAD7004D4BA4 /* AnimatedButton.swift */,
-				3727296E23E3082A0070267A /* ProgressView.swift */,
-				374B1DC623E34AA700AA63D5 /* HelpCircleView.swift */,
-			);
-			path = SubmitViewComposer;
 			sourceTree = "<group>";
 		};
 		37EA4C9823DB28880056F01E /* Services */ = {
@@ -245,26 +225,22 @@
 			files = (
 				04421D30254835BF007D015B /* PressAndHoldButton.swift in Sources */,
 				12275EFC23AA8E10005867EC /* AppDelegate.swift in Sources */,
-				374B1DC723E34AA700AA63D5 /* HelpCircleView.swift in Sources */,
 				12275F1623AA97F3005867EC /* CustomToggle.swift in Sources */,
 				11C27F7A23DEE4A800B20424 /* Helper.swift in Sources */,
-				3727296D23E2CCE20070267A /* Submit.swift in Sources */,
 				11C1830823DB0DD300456E16 /* Reader.swift in Sources */,
 				37256C9A23DC80E50069F9B0 /* ReminderHandler.swift in Sources */,
 				0473933E25488D6F00AD5B58 /* DateSelectionModal.swift in Sources */,
+				047027FE25599C880068EE72 /* ModifyAudioPressAndHold.swift in Sources */,
 				12275EFE23AA8E10005867EC /* SceneDelegate.swift in Sources */,
 				046D13192540588C00375EFA /* RoundAnimationEffect.swift in Sources */,
 				11D420D223DDB37D004D4BA4 /* AudioRecorder.swift in Sources */,
 				12275F0023AA8E10005867EC /* ContentView.swift in Sources */,
 				11D420D623DDD0A9004D4BA4 /* Extensions.swift in Sources */,
-				0473933B25488B2300AD5B58 /* HomeView.swift in Sources */,
 				04739341254890EA00AD5B58 /* BlurView.swift in Sources */,
 				11C27F7C23DEFCB900B20424 /* AudioPlayer.swift in Sources */,
 				12275F1423AA9250005867EC /* ReminderCellView.swift in Sources */,
 				379CD78B23E31F8100FD26EC /* Recording.swift in Sources */,
-				11D420D023DDAAD7004D4BA4 /* AnimatedButton.swift in Sources */,
 				12275F1023AA8E7C005867EC /* Reminder.swift in Sources */,
-				3727296F23E3082A0070267A /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.03;
 				DEVELOPMENT_ASSET_PATHS = "\"Jarvis0.0/Preview Content\"";
 				DEVELOPMENT_TEAM = QN5JJ5XQZ6;
 				ENABLE_PREVIEWS = YES;
@@ -409,7 +386,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "NLCompany.Jarvis0-0";
+				MARKETING_VERSION = 1.03;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JarvisCompany.Jarvis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.03;
 				DEVELOPMENT_ASSET_PATHS = "\"Jarvis0.0/Preview Content\"";
 				DEVELOPMENT_TEAM = QN5JJ5XQZ6;
 				ENABLE_PREVIEWS = YES;
@@ -429,7 +408,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "NLCompany.Jarvis0-0";
+				MARKETING_VERSION = 1.03;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JarvisCompany.Jarvis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

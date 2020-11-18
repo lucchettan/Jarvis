@@ -14,20 +14,20 @@ class ReminderHandler {
     let center = UNUserNotificationCenter.current()
     func create(reminder: Reminder) -> String {
         let content = UNMutableNotificationContent()
-        content.title = "Listen to me"
+        content.title = "You said so!"
         content.body = reminder.name
-        content.badge = 1
+        content.badge = 0
         print("------this is the last path: -------")
         print(reminder.fileURL!.lastPathComponent)
         
         content.sound =  UNNotificationSound(named: UNNotificationSoundName(rawValue: reminder.fileURL!.lastPathComponent))
-        
+//                                                         .weekday
         var triggerTime = Calendar.current.dateComponents([.hour,.minute,.second,], from: reminder.time)
         triggerTime.second = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
         
-        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "\(reminder.id)", content: content, trigger: trigger)
         print(request.identifier)
         center.add(request) { (error) in
             if error != nil {
@@ -42,4 +42,6 @@ class ReminderHandler {
         center.removePendingNotificationRequests(withIdentifiers: [reminder.notificationID!])
         print("---------Notification unabled----------")
     }
+    
+    
 }

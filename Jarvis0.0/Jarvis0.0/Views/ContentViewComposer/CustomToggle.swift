@@ -20,12 +20,6 @@ struct CustomToggle: View {
                 .animation(.spring())
             if !self.reminder.isOn { Spacer() }
         }
-        .frame(width: 40, height: 20)
-        .padding(5.0)
-        .background(self.reminder.isOn ? Color.green : Color.red)
-        .animation(.easeInOut)
-        .cornerRadius(50)
-//------remove and append the notification to the notificationcenter depending on the toggle
         .onTapGesture {
             for i in 0..<self.reminders.count {
                 if self.reminders[i] == self.reminder {
@@ -33,7 +27,6 @@ struct CustomToggle: View {
                         ReminderHandler().unable(reminder: self.reminder)
                     } else {
                         self.reminder.notificationID = ReminderHandler().create(reminder: self.reminder)
-                        print("------toggle step 1 creating ------")
                         print(self.reminder)
                     }
                     self.reminder.isOn.toggle()
@@ -42,8 +35,13 @@ struct CustomToggle: View {
             }
             let defaults = UserDefaults.standard
             defaults.set(try? PropertyListEncoder().encode(self.reminders), forKey: "reminders")
-            print("-----finish toggling-----")
             print(self.reminder)
         }
+        .frame(width: 40, height: 20)
+        .padding(5.0)
+        .background(self.reminder.isOn ? Color.green : Color.red)
+        .cornerRadius(50)
+//------remove and append the notification to the notificationcenter depending on the toggle
+
     }
 }
