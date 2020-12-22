@@ -8,16 +8,10 @@ Thanks to AVFoundation the app will record a memo and set a trigger time at the 
 So when your new favorite alarm ring, it won't hurt your feeling with the buzzy ring on iOS. 
 But a meaningfull speach done by the master of your feelings, **yourself**.
 
-![Alt text](https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG | width=100)
-
-![Alt text](https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG?raw=true "Optional Title" )
-
-
-![Alt text](https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty/2.PNG?raw=true | width=100 "Optional Title" =100x20)
-
-![Alt text](https://github.com/lucchettan/Jarvis/blob/master/editFeature.jpg?raw=true "Optional Title" =100x20)
-
-<img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" alt="alt text" width="100" height="250">
+<img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" alt="alt text" width="120" height="250">
+<img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="alt text" width="120" height="250">
+<img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="alt text" width="120" height="250">
+<img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="alt text" width="120" height="250">
 
 
 This app has been done in collaboration with my mate https://github.com/FlorentFrossard in SwiftUI because we are the iOS masters of the future.
