@@ -8,10 +8,6 @@ Thanks to AVFoundation the app will record a memo and set a trigger time at the 
 So when your new favorite alarm ring, it won't hurt your feeling with the buzzy ring on iOS. 
 But a meaningfull speach done by the master of your feelings, **yourself**.
 
-<img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" alt="alt text" width="120" height="250">
-<img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="alt text" width="120" height="250">
-<img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="alt text" width="120" height="250">
-<img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="alt text" width="120" height="250">
 
 <div class="row">
   <div class="column">
