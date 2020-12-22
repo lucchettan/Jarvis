@@ -10,13 +10,14 @@ But a meaningfull speach done by the master of your feelings, **yourself**.
 
 ![Alt text](https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG | width=100)
 
-![Alt text](https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG =250x250)
+![Alt text](https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG?raw=true "Optional Title" )
 
 
 ![Alt text](https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty/2.PNG?raw=true | width=100 "Optional Title" =100x20)
 
 ![Alt text](https://github.com/lucchettan/Jarvis/blob/master/editFeature.jpg?raw=true "Optional Title" =100x20)
 
+<img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" alt="alt text" width="100" height="250">
 
 
 This app has been done in collaboration with my mate https://github.com/FlorentFrossard in SwiftUI because we are the iOS masters of the future.
