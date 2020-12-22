@@ -15,16 +15,16 @@ But a meaningfull speach done by the master of your feelings, **yourself**.
 
 <div class="row">
   <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" style="width:25%">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" width="120" height="250">
   </div>
   <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="Forest" style="width:25%">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="Forest" width="120" height="250">
   </div>
   <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="Mountains" style="width:25%">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="Mountains" width="120" height="250">
   </div>
     <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="Mountains" style="width:25%">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="Mountains" width="120" height="250">
   </div>
 </div>
 
