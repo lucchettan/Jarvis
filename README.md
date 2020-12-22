@@ -9,7 +9,7 @@ So when your new favorite alarm ring, it won't hurt your feeling with the buzzy 
 But a meaningfull speach done by the master of your feelings, **yourself**.
 
 
-![alt-text-1](https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG "title-1") ![alt-text-2](https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG "title-2") ![alt-text-3](https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG "title-1") ![alt-text-4](https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG "title-2")
+![alt-text-1](https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG =250px "title-1" ) ![alt-text-2](https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG =250px "title-2" ) ![alt-text-3](https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG "title-1" =250px) ![alt-text-4](https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG =250px "title-2")
 
  
 <div class="row">
