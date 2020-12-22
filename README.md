@@ -13,6 +13,20 @@ But a meaningfull speach done by the master of your feelings, **yourself**.
 <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="alt text" width="120" height="250">
 <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="alt text" width="120" height="250">
 
+<div class="row">
+  <div class="column">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="Mountains" style="width:100%">
+  </div>
+    <div class="column">
+    <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="Mountains" style="width:100%">
+  </div>
+</div>
 
 This app has been done in collaboration with my mate https://github.com/FlorentFrossard in SwiftUI because we are the iOS masters of the future.
 
