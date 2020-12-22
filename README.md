@@ -12,20 +12,8 @@ But a meaningfull speach done by the master of your feelings, **yourself**.
 ![alt-text-1](https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG =250px "title-1" ) ![alt-text-2](https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG =250px "title-2" ) ![alt-text-3](https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG "title-1" =250px) ![alt-text-4](https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG =250px "title-2")
 
  
-<div class="row">
-  <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" width="120" height="250">
-  </div>
-  <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="Forest" width="120" height="250">
-  </div>
-  <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="Mountains" width="120" height="250">
-  </div>
-  <div class="column">
-    <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="Mountains" width="120" height="250">
-  </div>
-</div>
+<img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" width="120" height="250"> <img src="https://github.com/lucchettan/Jarvis/blob/master/selectTime.PNG" alt="Forest" width="120" height="250"> <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="Mountains" width="120" height="250"> <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="Mountains" width="120" height="250"> <img src="https://github.com/lucchettan/Jarvis/blob/master/homeWhileRecording.PNG" width="120" height="250">
+
 
 
 This app has been done in collaboration with my mate https://github.com/FlorentFrossard in SwiftUI because we are the iOS masters of the future.
