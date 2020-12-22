@@ -19,7 +19,7 @@ But a meaningfull speach done by the master of your feelings, **yourself**.
   <div class="column">
     <img src="https://github.com/lucchettan/Jarvis/blob/master/homeNotEmpty.PNG" alt="Mountains" width="120" height="250">
   </div>
-    <div class="column">
+  <div class="column">
     <img src="https://github.com/lucchettan/Jarvis/blob/master/editFeature.PNG" alt="Mountains" width="120" height="250">
   </div>
 </div>
