@@ -13,7 +13,7 @@ But a meaningfull speach done by the master of your feelings, **yourself**.
 This app has been done in collaboration with my mate https://github.com/FlorentFrossard in SwiftUI because we are the iOS masters of the future.
 
 DOWNLOAD at .... : The appstore link is coming.
-
+But have a taste of what is coming! https://testflight.apple.com/join/vW2eLiee
 
 A Support for MacOS and WatchOS is in our mind. 
 
